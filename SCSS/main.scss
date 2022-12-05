@@ -1,0 +1,45 @@
+@import "./--abstracts/variables";
+@import "./--abstracts/mixins";
+@import "./--companents/companents";
+@import "./--layout/header";
+@import "./--layout/mainContainer";
+@import "./--abstracts/animations";
+
+*,
+*::before,
+*::after {
+    @include m-p(0, 0);
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    @include w-h(100%, auto);
+}
+
+.container {
+    @include m-p(0 auto, 10px 60px);
+    @include dis-alig-just-flexdir-g(flex, center, space-between);
+    max-width: 114rem;
+    width: 100%;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+    font-size: $f-size-default;
+    &:hover {
+        color: $text-color-hover;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: $text-light;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+}

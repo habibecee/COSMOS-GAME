@@ -1,0 +1,107 @@
+.main-slider {
+    .single-slide {
+        position: relative;
+        max-height: 70vh;
+
+        img {
+            @include w-h(100%, 100%);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include w-h(100%, 100%);
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+
+            .slide-content {
+                position: absolute;
+                top: 25%;
+                right: 0;
+                width: 80%;
+                border-top: 2px solid $primary-font-color;
+                border-bottom: 2px solid $primary-font-color;
+                padding: 7rem 7rem;
+                background: linear-gradient(to right, rgba(29, 76, 112, 0.6), rgba(104, 63, 135, 0.6));
+                color: white;
+                animation: mainAnimation 3s ease-out;
+                // timing-function delay iteration-count direction fill-mode;
+
+                p {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+// OWL CAROUSEL
+
+.owl-theme {
+    position: relative;
+
+    .owl-dots {
+        position: absolute;
+        top: 90%;
+        left: 45%;
+        right: 45%;
+        z-index: 100;
+        display: flex;
+
+        .owl-dot {
+            display: inline-block;
+            @include w-h(3rem, 3rem);
+            text-align: center;
+            border-radius: 4rem;
+            background-color: transparent;
+            transition: all 0.5s;
+            color: $text-mute;
+
+            &.active,
+            &:hover {
+                color: $text-light;
+
+                span {
+                    background-color: transparent;
+                }
+            }
+
+            span {
+                font-size: 1.8rem;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+// MARGUEE AREA
+
+.latest-news {
+    @include dis-alig-just-flexdir-g(flex, center);
+    background-color: $btn-bg-color-hover;
+    height: 8rem;
+
+    &-title {
+        flex-basis: 25%;
+        text-align: right;
+        padding-right: 2rem;
+        font-size: 2rem;
+        color: $text-mute;
+    }
+
+    &-content {
+        flex-basis: 75%;
+        background-color: $btn-bg-color;
+        height: 100%;
+
+        .news-ticker {
+            @include dis-alig-just-flexdir-g(flex, center, space-between, $g: 30px);
+            line-height: 8rem;
+
+            p {
+                color: $text-light;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

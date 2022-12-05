@@ -1,0 +1,18 @@
+@mixin m-p ($m:null, $p:null) {
+    margin: $m;
+    padding: $p;
+};
+
+@mixin w-h ($w:null , $h:null) {
+    width: $w;
+    height: $h;    
+};
+
+@mixin dis-alig-just-flexdir-g ($d:null, $a:null, $j:null, $fd:null, $g:null ) {
+    display: $d;
+    align-items: $a;
+    justify-content: $j;
+    flex-direction: $fd;
+    gap: $g;
+    
+}

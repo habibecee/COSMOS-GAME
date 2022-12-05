@@ -1,0 +1,35 @@
+//  FONTS
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+$f-size-default: 24px;
+$f-size-big: 48px;
+$font-family: "Nanum Pen Script", cursive;
+
+//  COLORS
+
+$light-bg-color: #898aa6;
+$dark-bg-color: #1c2638;
+$btn-bg-color: #65647c;
+$btn-bg-color-hover: #1e1e25;
+$btn-text-color: #a4be7b;
+$btn-text-color-hover: #abff02;
+$btn-box-shadow: 0 0 2px 2px #949292ad;
+$btn-box-shadow-hover: 0 0 5px 5px #b5b9a294;
+$text-color: #f0dbdb;
+$text-color-hover: #fe7700;
+$primary-font-color: #f36906;
+$secondary-font-color: #14151d;
+$date-color: #f9e805;
+$comment-color: #08d7ee;
+$text-mute: #9f9f9f;
+$text-light: #fefefe;
+
+// UTILITIES
+
+.bg {
+    &-dark {
+        background-color: $dark-bg-color;
+    }
+    &-light {
+        background-color: $light-bg-color;
+    }
+}

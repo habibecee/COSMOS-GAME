@@ -1,0 +1,21 @@
+@keyframes mainAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(9rem);
+        border-top: 1px solid $comment-color;
+        border-bottom: 1px solid $comment-color;
+    }
+
+    50% {
+        transform: translateX(-0.1rem);
+        border-top: 1.5px solid $date-color;
+        border-bottom: 1.5px solid $date-color;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        border-top: 2px solid $primary-font-color;
+        border-bottom: 2px solid $primary-font-color;
+    }
+}

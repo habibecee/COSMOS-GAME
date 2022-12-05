@@ -1,0 +1,148 @@
+.header {
+    @include w-h(100%, 200px);
+    &-top {
+        border-bottom: 1px solid $primary-font-color;
+
+        &-left {
+            h1 {
+                font-size: $f-size-big;
+                background-image: linear-gradient(
+                    to left,
+                    #2192ff,
+                    #c32aa3,
+                    #4c5fd7,
+                    #7232bd,
+                    #f46f30,
+                    #ffdc7d,
+                    #3ccf4e
+                );
+                background-clip: text;
+                color: transparent;
+            }
+        }
+        &-md {
+            @include w-h(790px, 100%);
+            text-align: center;
+
+            a {
+                transition: all 1s;
+                margin: 0 15px;
+
+                &:hover {
+                    .fa- {
+                        &twitter {
+                            color: #1da1f2;
+                        }
+                        &facebook-f {
+                            color: #1877f2;
+                        }
+                        &youtube {
+                            color: #ff0000;
+                        }
+                        &instagram {
+                            background-image: linear-gradient(to right, #c32aa3, #4c5fd7, #7232bd, #f46f30, #ffdc7d);
+                            background-clip: text;
+                            color: transparent;
+                        }
+                        &google {
+                            color: #ea4335;
+                        }
+                        &amazon {
+                            color: #ff9900;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-right {
+            button {
+                @include m-p(0 0.5rem, 0.5rem 1rem);
+            }
+        }
+    }
+
+    &-nav {
+        @include w-h(100%, 20px);
+        @include m-p(10px 0, 10px 0);
+        // @include dis-alig-just-flexdir-g(flex, center, space-between);
+
+        &-navbar {
+            @include dis-alig-just-flexdir-g(flex, center, space-between);
+
+            &-menu {
+                display: flex;
+
+                li {
+                    line-height: 8rem;
+                    position: relative;
+                    transition: all 0.5s;
+                    margin-right: 40px;
+                    @include w-h($w: 100px);
+
+                    a {
+                        font-size: 1.6rem;
+                        padding: 0 0.4rem;
+                        letter-spacing: 1px;
+                    }
+
+                    i {
+                        color: $text-mute;
+
+                        &:hover {
+                            color: $text-light;
+                        }
+                    }
+
+                    .dropdown {
+                        position: absolute;
+                        background-color: lighten($dark-bg-color, 5%);
+                        @include w-h(100%, auto);
+                        @include m-p($p: 5px);
+                        z-index: 10;
+                        top: 6rem;
+                        transition: all 0.5s;
+                        opacity: 0;
+                        visibility: hidden;
+
+                        li {
+                            line-height: 4rem;
+                        }
+                    }
+
+                    &:hover {
+                        & .dropdown {
+                            opacity: 1;
+                            top: 5.85rem;
+                            box-shadow: -1px 0px 2px 2px #79909e4c;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+
+            &-search {
+                input[type="search"],
+                button[type="submit"] {
+                    border: none;
+                    background-color: transparent;
+                    color: $text-light;
+                }
+
+                input[type="search"] {
+                    border-bottom: 1px solid $btn-text-color-hover;
+                    padding: 0.5rem;
+                }
+
+                button[type="submit"] {
+                    margin-left: -2rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $btn-text-color-hover;
+                    }
+                }
+            }
+        }
+    }
+}
