@@ -18,10 +18,15 @@ body {
 }
 
 .container {
-    @include m-p(0 auto, 10px 60px);
+    @include m-p(0 auto, 0.7rem 5rem);
     @include dis-alig-just-flexdir-g(flex, center, space-between);
     max-width: 114rem;
     width: 100%;
+}
+
+section {
+    max-width: 100%;
+    padding: 4rem;
 }
 
 a {

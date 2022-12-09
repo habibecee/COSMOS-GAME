@@ -105,3 +105,124 @@
         }
     }
 }
+
+// RECENT GAMES
+
+.recent-games {
+    .section-title {
+        @include m-p(1rem 0, 1rem 0);
+        width: 100%;
+        text-align: center;
+
+        h2 {
+            font-size: 5rem;
+        }
+    }
+    &-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-row-gap: 2rem;
+        grid-column-gap: 3rem;
+        grid-template-areas:
+            "item-1 item-1 item-1 item-2"
+            "item-3 item-4 item-5 item-6";
+
+        .recent-game {
+            @include w-h(100%, 100%);
+            background-color: $btn-bg-color;
+
+            $items: (1, 2, 3, 4, 5, 6);
+            @each $item in $items {
+                &-#{$item} {
+                    grid-area: item- + $item;
+                }
+            }
+
+            &-thumbnail {
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    transition: all 0.5s;
+                }
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    background-color: rgba($light-bg-color, 0.3);
+                    @include w-h(100%, 100%);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.5s;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                .recent-game-thumbnail {
+                    &::after {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    img {
+                        transform: scale(1.1) rotate(5deg);
+                        transition: all 0.5s;
+                    }
+
+                    .rating {
+                        opacity: 1;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+
+            &-content {
+                padding: 2rem;
+
+                p {
+                    font-size: 1.3rem;
+                    line-height: 1.8;
+                    color: $text-mute;
+                }
+
+                .game {
+                    &-title {
+                        margin-bottom: 2rem;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            color: darken($text-light, 10%);
+                        }
+                    }
+
+                    &-meta {
+                        @include dis-alig-just-flexdir-g(flex, center, space-between);
+                    }
+
+                    &-date {
+                        color: $date-color;
+                        font-size: 1.6rem;
+
+                        &:hover {
+                            color: darken($date-color, 5%);
+                        }
+                    }
+
+                    &-comment {
+                        color: $comment-color;
+                        font-size: 1.6rem;
+
+                        &:hover {
+                            color: darken($comment-color, 5%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

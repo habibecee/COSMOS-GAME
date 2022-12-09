@@ -6,18 +6,6 @@
         &-left {
             h1 {
                 font-size: $f-size-big;
-                background-image: linear-gradient(
-                    to left,
-                    #2192ff,
-                    #c32aa3,
-                    #4c5fd7,
-                    #7232bd,
-                    #f46f30,
-                    #ffdc7d,
-                    #3ccf4e
-                );
-                background-clip: text;
-                color: transparent;
             }
         }
         &-md {

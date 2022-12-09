@@ -33,3 +33,27 @@ $text-light: #fefefe;
         background-color: $light-bg-color;
     }
 }
+
+.text {
+    &-light {
+        color: $text-light;
+    }
+    &-mute {
+        color: $text-mute;
+    }
+    &-dark {
+        color: $secondary-font-color;
+    }
+    &-colorful {
+        background-image: linear-gradient(to left, #2192ff, #c32aa3, #4c5fd7, #7232bd, #f46f30, #ffdc7d, #3ccf4e);
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.shadow {
+    &-colorful {
+        text-shadow: 0 0 5px #0084ff, 0 0 9px #6f00ff, 0 0 13px #7232bd, 0 0 17px #ff03c8, 0 0 21px #ff5100,
+            0 0 25px #f9fd00, 0 0 29px #00ff1e;
+    }
+}
